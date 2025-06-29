@@ -1,33 +1,42 @@
-# ICMPing (Latest Release - v0.1.0-beta)
-A lightweight tool used for sending ICMP (ping) requests.
-
-
+# ICMPing - v1.0.0
+A lightweight, open-source tool for sending ICMP ping requests to both IPv4 and IPv6 addresses.
 ## Preview
-![image](https://github.com/user-attachments/assets/347b5aff-1bf2-4233-82c5-5de86d9c6552)
+![demo1](https://github.com/user-attachments/assets/f64c572b-602d-4475-ad07-949e0fd2fa86)
+![demo2](https://github.com/user-attachments/assets/0b015ca2-3048-41e6-87eb-6225a88a9b6f)
+
 
 
 ## Features
-- Optimised for Windows
-- IP Validation
-- Targeted ICMP Request
-- User-Friendly & Simple GUI
-
+### - IPv4 & IPv6 Support
+### - Input Custom Values
+- Ping count
+- Interval between pings
+- Timeout duration
+- Target IP address
+### - Real-Time Output
+- Round Trip Time (RTT)
+- Packet responsiveness
+- Timestamped data
+### - Detailed Summary
+- Packets sent/received
+- Packet loss
+- RTT min/max/avg
+- Jitter
+### - Error Handling
+### - Multi-Threaded Execution
+### - Lightweight & Open-Sourced
 
 ## Dependencies
 - [`customtkinter`](https://github.com/TomSchimansky/CustomTkinter)
 - [`icmplib`](https://github.com/ValentinBELYN/icmplib)
+- [`Pillow`](https://github.com/python-pillow/Pillow)
 
-
-## [VirusTotal](https://www.virustotal.com/gui/file/bc886450b4b0117a1c3692f460cc2fde6b39b92cc85ffd8ed9fbad6ca010a07a)
-All files a part of this project are **completely safe**. False positives were raised due to the Python script being packaged using PyInstaller, which is known to raise false positives. The code is completely open-sourced, so you can run it with Python and verify its integrity. The v0.1.0-beta has been verified by Microsoft as of June 20th, 2025.
-
-
-## Download Options for Latest Version
+## Download Options
 
 ### - GitHub
-- Download the latest release from [GitHub](https://github.com/Caleb-Greene/ICMPing/releases/tag/v0.1.0-beta)
+- Download the release from the attached exe
 ### - Google Drive
 - Download the release from [Google Drive](https://drive.google.com/drive/folders/1wt3lZsYCIsp06WSQC9oRksialB3ur3TI?usp=sharing)
 ### - Source Code
-1. Download the dependencies via pip ```bash pip install customtkinter icmplib```
-2. Running the main.py file from [GitHub](https://github.com/Caleb-Greene/ICMPing/releases/tag/v0.1.0-beta) using Python version 3.7+ 
+1. Download the dependencies via pip ```bash pip install customtkinter icmplib Pillow```
+2. Running the main.py file using Python version 3.7+ 

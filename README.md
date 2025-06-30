@@ -1,5 +1,5 @@
 # ICMPing - v1.0.0
-A lightweight, open-source tool for sending ICMP ping requests to both IPv4 and IPv6 addresses.
+A lightweight, open-source GUI tool for sending ICMP ping requests to both IPv4 and IPv6 addresses.
 ## Preview
 ![demo1](https://github.com/user-attachments/assets/f64c572b-602d-4475-ad07-949e0fd2fa86)
 ![demo2](https://github.com/user-attachments/assets/0b015ca2-3048-41e6-87eb-6225a88a9b6f)

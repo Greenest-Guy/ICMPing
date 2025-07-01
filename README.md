@@ -22,6 +22,7 @@ A lightweight, open-source GUI tool for sending ICMP ping requests to both IPv4 
 - Packet loss
 - RTT min/max/avg
 - Jitter
+### - Download Data to Your Computer
 ### - Error Handling
 ### - Multi-Threaded Execution
 ### - Lightweight & Open-Sourced

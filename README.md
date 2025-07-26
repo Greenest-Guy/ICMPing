@@ -27,6 +27,7 @@ ICMPing is a lightweight, open-sourced tool designed to send and analyze ICMP pi
 - Packet loss
 - RTT min/max/avg
 - Jitter
+### - Windows & MacOS Support
 ### - Downloadable Data
 ### - Error Handling
 ### - Multi-Threaded Execution
@@ -46,7 +47,7 @@ Version v1.1.0 is now verified by Microsoft Security Intelligence as of July 1st
 
 ### - GitHub
 - Download the release from the attached exe [here](https://github.com/Caleb-Greene/ICMPing/releases/download/v1.1.0/ICMPing.exe)
-### - Google Drive
+### - Google Drive (Windows & MacOS)
 - Download the release from [Google Drive](https://drive.google.com/drive/folders/1wt3lZsYCIsp06WSQC9oRksialB3ur3TI?usp=sharing)
 ### - Source Code
 1. Download the dependencies via pip ```bash pip install customtkinter icmplib Pillow```

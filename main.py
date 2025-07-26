@@ -1,3 +1,4 @@
+from tkinter import PhotoImage
 from datetime import datetime
 from customtkinter import *
 from icmplib import ping
@@ -109,11 +110,20 @@ class ICMPing(CTk): # Main class - Inherits from CTk
         self.resizable(False, False) # Disable resizing of the main window
 
         current_dir = os.path.dirname(os.path.abspath(__file__)) # Get the current path of the code
-        icon_path = os.path.join(current_dir, "LOGO.ico")
-        font_path = os.path.join(current_dir, "Lekton-Regular.ttf")
+
         bg_path = os.path.join(current_dir, "BG.png")
         dbutton_path = os.path.join(current_dir, "dButton.png")
-        self.iconbitmap(icon_path)
+
+        if sys.platform == "win32":
+            icon_path = os.path.join(current_dir, "logo.ico")
+            self.iconbitmap(icon_path)
+
+        elif sys.platform == "darwin":
+            try:
+                self.iconphoto(True, PhotoImage(file=os.path.join(current_dir, "logo.png")))
+            
+            except Exception as e:
+                pass
 
         # Images
         bg_image = Image.open(bg_path)
@@ -141,7 +151,7 @@ class ICMPing(CTk): # Main class - Inherits from CTk
         self.IPinput.place(x=180, y=178, anchor="center")
 
         # Ping button
-        self.button = CTkButton(master=self, width=125, height=25, text="Start Ping", corner_radius=16, fg_color="#029cff", hover_color="#0062b1", command=self.ping, font=(font_path, 16), bg_color="#2f2f2f")
+        self.button = CTkButton(master=self, width=125, height=25, text="Start Ping", corner_radius=16, fg_color="#029cff", hover_color="#0062b1", command=self.ping, font=("", 16), bg_color="#2f2f2f")
         self.button.place(x=180, y=225, anchor="center")
 
         # Download button
@@ -162,14 +172,28 @@ class ICMPing(CTk): # Main class - Inherits from CTk
 
 
     def open_error_window(self, message):
+
         if self.ErrorWindow is None or not self.ErrorWindow.winfo_exists(): # Check if the window is not already open
             self.ErrorWindow = ErrorWindow(self, message)
 
-        x = self.winfo_rootx() + 18
-        y = self.winfo_rooty() + 70
+        self.update_idletasks()
+
+        parent_x = self.winfo_rootx()
+        parent_y = self.winfo_rooty()
+
+        parent_width = self.winfo_width()
+        parent_height = self.winfo_height()
+
+        error_width = 250
+        error_height = 75
+
+        # Center calculation
+        x = parent_x + (parent_width // 2) - (error_width // 2)
+        y = parent_y + (parent_height // 2) - (error_height // 2)
+
         self.enable_button()
-        self.ErrorWindow.geometry(f"+{x}+{y}") # Position the error window relative to the main window
-        self.ErrorWindow.focus() # Bring the existing error window to the front
+        self.ErrorWindow.geometry(f"{error_width}x{error_height}+{x}+{y}")
+        self.ErrorWindow.focus() # Bring window to the front
     
 
     def disable_button(self):
@@ -212,11 +236,12 @@ class ICMPing(CTk): # Main class - Inherits from CTk
         self.data = Data(self.IPinput.get())
 
         self.display_textbox()
+
         for i in range(count):
             try:
-                response = ping(self.IPinput.get(), count=1, timeout=timeout) # Send a ping request
+                response = ping(self.IPinput.get(), count=1, timeout=timeout, privileged=False) # Send a ping request
             except Exception as e:
-                return
+                pass
 
             if response.is_alive:
                 self.data.increment_sent();self.data.increment_received()
@@ -254,6 +279,10 @@ class ICMPing(CTk): # Main class - Inherits from CTk
 
     def download(self):
         folder_path = filedialog.askdirectory()
+
+        if not folder_path:
+            return  # User clicked cancel
+        
         file_name = f"ICMPing {Data.get_current_date()} {Data.get_current_time_dot()}.txt"
         file = os.path.join(folder_path, file_name)
 

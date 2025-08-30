@@ -15,8 +15,6 @@ ICMPing - A lightweight tool used for sending ICMP (ping) requests.
 GitHub - https://github.com/Caleb-Greene/ICMPing
 
 License - https://github.com/Caleb-Greene/ICMPing/tree/main?tab=License-1-ov-file
-
-All code written by Caleb Greene
 '''
 
 
@@ -119,12 +117,8 @@ class ICMPing(CTk):  # Main class - Inherits from CTk
             self.iconbitmap(icon_path)
 
         elif operating_system == "darwin":
-            try:
-                self.iconphoto(True, PhotoImage(
-                    file=os.path.join(current_dir, "logo.png")))
-
-            except Exception as e:
-                pass
+            self.iconphoto(True, PhotoImage(
+                file=os.path.join(current_dir, "logo.png")))
 
         # Images
         bg_image = Image.open(bg_path)
@@ -254,7 +248,8 @@ class ICMPing(CTk):  # Main class - Inherits from CTk
                 response = ping(self.IPinput.get(), count=1,
                                 timeout=timeout, privileged=False)
             except Exception as e:
-                pass
+                print(f"Ping Failed on Attempt {i + 1} - {e}")
+                continue
 
             if response.is_alive:
                 self.data.increment_sent()
@@ -265,7 +260,8 @@ class ICMPing(CTk):  # Main class - Inherits from CTk
                 self.data.increment_sent()
                 self.display(self.data.no_reply())
 
-            time.sleep(interval)
+            if i != (count - 1):
+                time.sleep(interval)
 
         self.display(self.data.summary(interval, timeout))
         self.enable_button()

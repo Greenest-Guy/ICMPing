@@ -43,12 +43,11 @@ Virus Total results can be seen [here](https://www.virustotal.com/gui/file/8f57d
 
 Version v1.1.0 is now verified by Microsoft Security Intelligence as of July 1st, 2025.
 
-## Download Options
+## Download Options (Windows & MacOS)
 
 ### - GitHub
 - Download the release from the attached exe [here](https://github.com/Caleb-Greene/ICMPing/releases/download/v1.1.0/ICMPing.exe)
-### - Google Drive (Windows & MacOS)
-- Download the release from [Google Drive](https://drive.google.com/drive/folders/1wt3lZsYCIsp06WSQC9oRksialB3ur3TI?usp=sharing)
+
 ### - Source Code
 1. Download the dependencies via pip ```bash pip install customtkinter icmplib Pillow```
 2. Running the main.py file using Python version 3.7+

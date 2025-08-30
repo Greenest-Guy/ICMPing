@@ -70,7 +70,7 @@ class Data():
 
     def summary(self, interval, timeout):
         message = (
-            f"\n--- Summary ({Data.get_current_date()})---\n"
+            f"\n--- Summary ({Data.get_current_date()}) ---\n"
             f"Packets Sent: {self.sent}\n"
             f"Packets Received: {self.received}\n"
             f"Packet Loss: {((self.sent - self.received) / self.sent) * 100:.2f}%\n\n"

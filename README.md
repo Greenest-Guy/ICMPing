@@ -3,6 +3,7 @@ ICMPing is a lightweight, open-sourced tool designed to send and analyze ICMP pi
 
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Caleb-Greene/ICMPing/total?style=for-the-badge&color=029cff) ![GitHub Release](https://img.shields.io/github/v/release/Caleb-Greene/ICMPing?style=for-the-badge&color=029cff)
+[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Greenest-Guy/ICMPing?style=for-the-badge)](https://www.codefactor.io/repository/github/greenest-guy/ICMPing)
 
 
 ## Preview

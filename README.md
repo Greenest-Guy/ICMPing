@@ -39,7 +39,7 @@ ICMPing is a lightweight, open-sourced tool designed to send and analyze ICMP pi
 - [`Pillow`](https://github.com/python-pillow/Pillow)
 
 ## VirusTotal
-Virus Total results can be seen [here](https://www.virustotal.com/gui/file/8f57daea9ff7b8ea3184c10026ae995521281c387d835e98ee2f8760a2a41b26/detection). Please note that the detections are false positives raised due to the fact that the application was packaged using PyInstaller. All code and files are completely safe and open-sourced, so you can download and view them yourself. 
+VirusTotal results can be viewed [here](https://www.virustotal.com/gui/file/8f57daea9ff7b8ea3184c10026ae995521281c387d835e98ee2f8760a2a41b26/detection). Please note that the detections are false positives raised due to the application being packaged using PyInstaller. All code and files are completely safe and open-sourced, allowing you to download and view them at your convenience. 
 
 Version v1.1.0 is now verified by Microsoft Security Intelligence as of July 1st, 2025.
 

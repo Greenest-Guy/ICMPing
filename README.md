@@ -47,7 +47,7 @@ Version v1.1.0 is now verified by Microsoft Security Intelligence as of July 1st
 ## Download Options (Windows & MacOS)
 
 ### - GitHub
-- Download the latest release [here on github]([https://github.com/Caleb-Greene/ICMPing/releases/download/v1.1.0/ICMPing.exe](https://github.com/Greenest-Guy/ICMPing/releases/latest))
+- Download the latest release [here on GitHub](https://github.com/Greenest-Guy/ICMPing/releases/latest)
 
 ### - Source Code
 1. Download the dependencies via pip ```bash pip install customtkinter icmplib Pillow```

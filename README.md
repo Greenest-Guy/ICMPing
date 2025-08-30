@@ -1,4 +1,4 @@
-# ICMPing - v1.1.0
+# ICMPing
 ICMPing is a lightweight, open-sourced tool designed to send and analyze ICMP ping requests to IPv4 & IPv6 addresses, making network diagnostics simple and easy. 
 
 

@@ -52,6 +52,3 @@ Version v1.1.0 is now verified by Microsoft Security Intelligence as of July 1st
 ### - Source Code
 1. Download the dependencies via pip ```bash pip install customtkinter icmplib Pillow```
 2. Running the main.py file using Python version 3.7+
-
-## Note
-Commit history was reset on the 16th of July 2025 to clean up metadata upon release. See the releases for project version progression.
